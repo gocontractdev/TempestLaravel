@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\NewsCreatedEvent;
-use App\Http\Resources\NewsResource;
-use App\Http\Resources\NewsResourceCollection;
-use App\Mail\NewsMail;
 use App\News;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Mail;
+use App\Events\NewsCreatedEvent;
+use Illuminate\Http\JsonResponse;
+use App\Http\Requests\NewsRequest;
+use App\Http\Resources\NewsResource;
+use App\Http\Resources\NewsResourceCollection;
 
 class NewsController extends Controller
 {
@@ -27,22 +26,17 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param NewsRequest $request
      * @return NewsResource
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-        ]);
         $data = [
             'title' => $request->get('title'),
             'content' => $request->get('content'),
             'user_id' => $request->user()->id,
         ];
         $tempNews = News::create($data);
-        // send email event
         event(new NewsCreatedEvent($request->get('title')));
         return new NewsResource($tempNews);
     }
@@ -61,11 +55,11 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param NewsRequest $request
      * @param News $news
      * @return NewsResource
      */
-    public function update(Request $request, News $news)
+    public function update(NewsRequest $request, News $news)
     {
         $news->update($request->all());
         return new NewsResource($news);
