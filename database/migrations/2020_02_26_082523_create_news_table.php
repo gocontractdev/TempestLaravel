@@ -19,10 +19,10 @@ class CreateNewsTable extends Migration
             $table->string('content');
             // relationships
             $table->integer('user_id')->unsigned();
-            /*$table->foreign('user_id')
+            $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->onDelete('cascade');*/
+                ->onDelete('cascade');
             $table->timestamps();
             /** this is automatically set with timestamps
              * $table->dateTime('created_at');
