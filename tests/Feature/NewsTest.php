@@ -127,7 +127,6 @@ class NewsTest extends TestCase
 
     public function testDelete()
     {
-        // todo: delete duplicates
         $monitorId =  rand(1, 100);
         $testUser = factory(User::class)->create();
         $fakedNews = factory(News::class)->create([
