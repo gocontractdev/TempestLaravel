@@ -36,7 +36,12 @@ crontab -e
 
 Postman collection is available at:
 
+https://drive.google.com/file/d/1GlW_xVguJgPVOgVdDwbgnOHeNA_A4FOc/view?usp=sharing
+
 Postman environment is available at:
+
+https://drive.google.com/file/d/13KyACM2BmVFgn17gTo-jd8agI7VnveL7/view?usp=sharing
+
 
 ## License
 
