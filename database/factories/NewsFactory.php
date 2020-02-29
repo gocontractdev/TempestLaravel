@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(News::class, function (Faker $faker) {
     return [
-        'name' => $faker->title,
-        'email' => $faker->text,
+        'title' => $faker->name,
+        'content' => $faker->text,
         'created_at' => $faker->dateTimeThisYear,
         'updated_at' => $faker->dateTime,
         'user_id' => null,

@@ -89,7 +89,7 @@ class NewsController extends Controller
             $data['status'] = false;
             $response->setStatusCode(Response::HTTP_BAD_REQUEST);
         }
-        $response->setData($data);
+        $response->setData(['data' => $data,]);
         return $response;
     }
 }
