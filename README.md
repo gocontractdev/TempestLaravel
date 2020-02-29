@@ -31,6 +31,11 @@ crontab -e
 
 ```
 
+## Database
+
+You can download the test database here:
+
+https://drive.google.com/file/d/1jTrW04cJUHhawodllfVVhOe8HLTHxkdZ/view?usp=sharing
 
 ## Postman Collection / Configuration
 
