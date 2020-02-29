@@ -9,7 +9,7 @@
 
 ## About Tempest
 
-This is a sample Laravel Project.
+This is a sample Laravel Project for Luca.
 
 ## Commands
 
